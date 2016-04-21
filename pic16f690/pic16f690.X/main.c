@@ -18,6 +18,9 @@
 
 #define _XTAL_FREQ 4000000
 
+
+volatile int adcDelay;
+
 void delay(int ticks)
 {
     while(ticks-->0)
@@ -65,15 +68,20 @@ void initTIMER()
 void interrupt isr()
 {
     static int counter = 0;
+    static int state = 1;
     counter++;
     INTCONbits.T0IF = 0;        //Clear the Timer 0 interrupt flag
     TMR0 = TIMER_RESET_VALUE;                   //Load a value of 0 into the timer
                                 //This is actually not necessary since the
                                 //register will be at 0 anyway after rolling
                                 //over
-    if(counter>=1000)
+    if(counter >= adcDelay)
     {
-        PORTCbits.RC0 = ~PORTCbits.RC0; //Toggle the LED
+        PORTC = state;
+        state <<= 1;
+        if(state == 0x10)
+            state = 0x01;
+
         counter=0;
     }
 }
@@ -89,10 +97,35 @@ int readADC()
     return result;
 }
 
-void main(void) {
-    int delayLeds = 10000;
-    int state = 0x01;
+void initUART()
+{
+    int uartBaudRate = 9600;
+    BAUDCTLbits.SCKP = 0;   //non-inverted data
+    BAUDCTLbits.BRG16 = 0;  //8-bit Bud rate generator
+    BAUDCTLbits.ABDEN = 0;  //no auto-baud
+    SPBRGH = 0; //8-bit BRG, so high byte is 0
+    SPBRG = (_XTAL_FREQ/uartBaudRate)/16-1; //See datasheet for BRG formula
+    TXSTAbits.TX9 = 0; //8-bit transmitter
+    TXSTAbits.TXEN = 1; //enable transmitter
+    TXSTAbits.SYNC = 0; //asynchronous operation
+    TXSTAbits.BRGH = 1; //high speed BRG
+    RCSTAbits.RX9 = 0; //8-bit receiver
+    RCSTAbits.CREN = 1; //enable receiver
+
+    PIE1bits.TXIE = 0;  //disable transmit interrupt
+    PIE1bits.RCIE = 0;  //disable receive interrupts
+
+    RCSTAbits.SPEN = 1; //enable UART
     
+    //ToDo:
+    //https://bitbucket.org/dmorrish/embeddedlibrary/src
+    
+}
+
+
+
+void main(void) {
+        
     initADC();
     initTIMER();
     PORTC = 0x00;
@@ -100,11 +133,7 @@ void main(void) {
 
     while(1)
     {
-//        PORTC = state;
-//        state <<= 1;
-//        if(state == 0x10)
-//            state = 0x01;
-//        delayLeds = readADC()*10;
+        adcDelay = readADC();
 //        delay(delayLeds);
     }
 }

@@ -1,0 +1,212 @@
+[p LITE_MODE AUTOSTATIC PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F690 ]
+[d frameptr 6 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.37\sources\pic\eeprom.c
+[v _eecpymem eecpymem `(v  1 e 1 0 ]
+"39
+[v _memcpyee memcpyee `(v  1 e 1 0 ]
+"30 D:\Deian\Dev\Microchip\Code\microchip\microchip\pic16f690\pic16f690.X\main.c
+[v _initADC initADC `(v  1 e 1 0 ]
+"50
+[v _initTIMER initTIMER `(v  1 e 1 0 ]
+"68
+[v _isr isr `II(v  1 e 1 0 ]
+"90
+[v _readADC readADC `(i  1 e 2 0 ]
+"127
+[v _main main `(v  1 e 1 0 ]
+"55 C:\Program Files (x86)\Microchip\xc8\v1.37\include\pic16f690.h
+[v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
+"247
+[v _PORTC PORTC `VEuc  1 e 1 @7 ]
+[s S154 . 1 `uc 1 RABIF 1 0 :1:0 
+`uc 1 INTF 1 0 :1:1 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 RABIE 1 0 :1:3 
+`uc 1 INTE 1 0 :1:4 
+`uc 1 T0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"331
+[u S163 . 1 `S154 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES163  1 e 1 @11 ]
+[s S236 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADDEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"837
+[u S245 . 1 `S236 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES245  1 e 1 @24 ]
+"1043
+[v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
+[s S64 . 1 `uc 1 ADON 1 0 :1:0 
+`uc 1 GO_nDONE 1 0 :1:1 
+`uc 1 CHS 1 0 :4:2 
+`uc 1 VCFG 1 0 :1:6 
+`uc 1 ADFM 1 0 :1:7 
+]
+"1079
+[s S70 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO 1 0 :1:1 
+`uc 1 CHS0 1 0 :1:2 
+`uc 1 CHS1 1 0 :1:3 
+`uc 1 CHS2 1 0 :1:4 
+`uc 1 CHS3 1 0 :1:5 
+]
+[s S77 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 nDONE 1 0 :1:1 
+]
+[s S80 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO_DONE 1 0 :1:1 
+]
+[u S83 . 1 `S64 1 . 1 0 `S70 1 . 1 0 `S77 1 . 1 0 `S80 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES83  1 e 1 @31 ]
+[s S128 . 1 `uc 1 PS 1 0 :3:0 
+`uc 1 PSA 1 0 :1:3 
+`uc 1 T0SE 1 0 :1:4 
+`uc 1 T0CS 1 0 :1:5 
+`uc 1 INTEDG 1 0 :1:6 
+`uc 1 nRABPU 1 0 :1:7 
+]
+"1163
+[s S135 . 1 `uc 1 PS0 1 0 :1:0 
+`uc 1 PS1 1 0 :1:1 
+`uc 1 PS2 1 0 :1:2 
+]
+[u S139 . 1 `S128 1 . 1 0 `S135 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES139  1 e 1 @129 ]
+"1212
+[v _TRISA TRISA `VEuc  1 e 1 @133 ]
+[s S26 . 1 `uc 1 TRISA0 1 0 :1:0 
+`uc 1 TRISA1 1 0 :1:1 
+`uc 1 TRISA2 1 0 :1:2 
+`uc 1 TRISA3 1 0 :1:3 
+`uc 1 TRISA4 1 0 :1:4 
+`uc 1 TRISA5 1 0 :1:5 
+]
+"1227
+[u S33 . 1 `S26 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES33  1 e 1 @133 ]
+"1299
+[v _TRISC TRISC `VEuc  1 e 1 @135 ]
+[s S257 . 1 `uc 1 TMR1IE 1 0 :1:0 
+`uc 1 TMR2IE 1 0 :1:1 
+`uc 1 CCP1IE 1 0 :1:2 
+`uc 1 SSPIE 1 0 :1:3 
+`uc 1 TXIE 1 0 :1:4 
+`uc 1 RCIE 1 0 :1:5 
+`uc 1 ADIE 1 0 :1:6 
+]
+"1380
+[s S265 . 1 `uc 1 T1IE 1 0 :1:0 
+`uc 1 T2IE 1 0 :1:1 
+]
+[u S268 . 1 `S257 1 . 1 0 `S265 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES268  1 e 1 @140 ]
+[s S208 . 1 `uc 1 TX9D 1 0 :1:0 
+`uc 1 TRMT 1 0 :1:1 
+`uc 1 BRGH 1 0 :1:2 
+`uc 1 SENDB 1 0 :1:3 
+`uc 1 SYNC 1 0 :1:4 
+`uc 1 TXEN 1 0 :1:5 
+`uc 1 TX9 1 0 :1:6 
+`uc 1 CSRC 1 0 :1:7 
+]
+"2320
+[s S217 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 SENB 1 0 :1:3 
+]
+[u S220 . 1 `S208 1 . 1 0 `S217 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES220  1 e 1 @152 ]
+"2369
+[v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
+"2430
+[v _SPBRGH SPBRGH `VEuc  1 e 1 @154 ]
+[s S185 . 1 `uc 1 ABDEN 1 0 :1:0 
+`uc 1 WUE 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 BRG16 1 0 :1:3 
+`uc 1 SCKP 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 RCIDL 1 0 :1:6 
+`uc 1 ABDOVF 1 0 :1:7 
+]
+"2508
+[u S194 . 1 `S185 1 . 1 0 ]
+[v _BAUDCTLbits BAUDCTLbits `VES194  1 e 1 @155 ]
+"2542
+[v _ADRESL ADRESL `VEuc  1 e 1 @158 ]
+[s S108 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 ADCS 1 0 :3:4 
+]
+"2565
+[s S111 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 ADCS0 1 0 :1:4 
+`uc 1 ADCS1 1 0 :1:5 
+`uc 1 ADCS2 1 0 :1:6 
+]
+[u S116 . 1 `S108 1 . 1 0 `S111 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES116  1 e 1 @159 ]
+"2938
+[v _ANSEL ANSEL `VEuc  1 e 1 @286 ]
+[s S43 . 1 `uc 1 ANS0 1 0 :1:0 
+`uc 1 ANS1 1 0 :1:1 
+`uc 1 ANS2 1 0 :1:2 
+`uc 1 ANS3 1 0 :1:3 
+`uc 1 ANS4 1 0 :1:4 
+`uc 1 ANS5 1 0 :1:5 
+`uc 1 ANS6 1 0 :1:6 
+`uc 1 ANS7 1 0 :1:7 
+]
+"2955
+[u S52 . 1 `S43 1 . 1 0 ]
+[v _ANSELbits ANSELbits `VES52  1 e 1 @286 ]
+"2999
+[v _ANSELH ANSELH `VEuc  1 e 1 @287 ]
+"22 D:\Deian\Dev\Microchip\Code\microchip\microchip\pic16f690\pic16f690.X\main.c
+[v _adcDelay adcDelay `VEi  1 e 2 0 ]
+"127
+[v _main main `(v  1 e 1 0 ]
+{
+"139
+} 0
+"90
+[v _readADC readADC `(i  1 e 2 0 ]
+{
+"92
+[v readADC@result result `i  1 a 2 2 ]
+"98
+} 0
+"50
+[v _initTIMER initTIMER `(v  1 e 1 0 ]
+{
+"66
+} 0
+"30
+[v _initADC initADC `(v  1 e 1 0 ]
+{
+"48
+} 0
+"68
+[v _isr isr `II(v  1 e 1 0 ]
+{
+"70
+[v isr@counter counter `i  1 s 2 counter ]
+"71
+[v isr@state state `i  1 s 2 state ]
+"87
+} 0
